@@ -4,7 +4,8 @@
   "description": "more testing",
   "main": "index.js",
   "scripts": {
-    "production" : "webpack -p"
+    "production" : "webpack -p",
+    "start": "webpack-dev-server"
   },
   "author": "bas",
   "license": "ISC",
