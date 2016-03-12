@@ -25,12 +25,28 @@ var Github = React.createClass({
   }
 })
 
+var Link = React.createClass({
+  changeUrl: function () {
+    window.location.replace(this.props.href)
+  },
+  render: function() {
+    return (
+      <span style={{color: ' red', cursor: 'pointer'}}
+        onClick={this.changeUrl}>
+        {this.props.children}
+      </span>
+    )
+  }
+})
+
 var Website = React.createClass({
   render: function() {
     return (
       <div>
-        <a href={"http://www."+ this.props.homepage}>{this.props.homepage}</a>
-      </div>
+        <Link href={"http://www."+ this.props.homepage}>
+          {this.props.homepage}
+        </Link>
+    </div>
     )
   }
 })
