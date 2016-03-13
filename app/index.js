@@ -1,70 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-
-var user = {
-  'name' : 'bas',
-  'githubusername' : 'bastronaut',
-  'homepage' : 'bastronaut.com'
-}
-
-var ProfileName = React.createClass({
-  render: function() {
-    return (
-      <div>{this.props.name}</div>
-    )
-  }
-})
-
-var Github = React.createClass({
-  render: function() {
-    return(
-      <div>
-        <a href={"http://www.github.com/"+ this.props.githubusername}>Github</a>
-      </div>
-    )
-  }
-})
-
-var Link = React.createClass({
-  changeUrl: function () {
-    window.location.replace(this.props.href)
-  },
-  render: function() {
-    return (
-      <span style={{color: ' red', cursor: 'pointer'}}
-        onClick={this.changeUrl}>
-        {this.props.children}
-      </span>
-    )
-  }
-})
-
-var Website = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <Link href={"http://www."+ this.props.homepage}>
-          {this.props.homepage}
-        </Link>
-    </div>
-    )
-  }
-})
-
-var Avatar = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <ProfileName name={this.props.user.name} />
-        <Github githubusername={this.props.user.githubusername} />
-        <Website homepage={this.props.user.homepage} />
-      </div>
-    )
-  }
-})
-
+var routes = require('./config/routes')
 
 ReactDOM.render(
-  <Avatar user={user}/>,
+  routes,
   document.getElementById('app')
 );
