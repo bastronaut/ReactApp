@@ -1,5 +1,6 @@
 var React = require('react');
 var ConfirmBattle = require('../components/ConfirmBattle');
+var githubHelpers = require('../utils/githubHelpers');
 
 var ConfirmBattleContainer = React.createClass({
   contextTypes: {
@@ -20,6 +21,10 @@ var ConfirmBattleContainer = React.createClass({
      var query = this.props.location.query;
      console.log('QUERY', query);
      // Fetch info from GH and update state
+     githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
+      .then(function (players) {
+        console.log('players: ', players);
+      })
      this.setState({
        isLoading: false
      })
