@@ -19,6 +19,8 @@ var helpers = {
         return info.map(function (userinfo) {
           return user.data;
         });
+      }).catch(function (err) {
+          console.warn('err;', err);
       });
   }
 };
