@@ -2,6 +2,7 @@ var React = require('react');
 var styles = require('../styles/index.js')
 var Link = require('react-router').Link;
 var PropTypes = require('react').PropTypes;
+var UserDetails = require('UserDetails');
 
 function puke(object) {
   console.log('the object:', object);
@@ -17,12 +18,13 @@ function ConfirmBattle (props) {
 
         <div className="col-sm-6">
           <p className="lead">Player 1</p>
-            {puke(props.playersInfo[0])}
+            // {puke(props.playersInfo[0])}
+            <UserDetails info={props.playersInfo[0] score=5 />
         </div>
 
         <div className="col-sm-6">
           <p className="lead">Player 2</p>
-          {puke(props.playersInfo[1])}
+          <UserDetails info={props.playersInfo[1] score=5 />
         </div>
       </div>
 
