@@ -14,9 +14,9 @@ var helpers = {
     // axios.all() takes array of promises and runs .then on complete
       return axios.all(players.map(function(username) {
         return getUserInfo(username);
-      })).then(function (userinfo) {
+      })).then(function (usersinfo) {
         console.log(usersinfo);
-        return info.map(function (userinfo) {
+        return usersinfo.map(function (user) {
           return user.data;
         });
       }).catch(function (err) {

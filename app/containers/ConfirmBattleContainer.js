@@ -28,7 +28,7 @@ var ConfirmBattleContainer = React.createClass({
           isLoading: false,
           playersInfo: [players[0], players[1]]
         })
-      }.bind(this))
+      }.bind(this)) // Set the outer context (react) so this.setState works
   },
   componentWillReceiveProps: function () {
     console.log('componentWillReceiveProps');
@@ -36,11 +36,15 @@ var ConfirmBattleContainer = React.createClass({
   componentWillUnmount: function() {
     console.log('componentWillUnmount');
   },
+  handleInitiateBattle: function () {
+    console.log('initiating battle')
+  },
   render: function() {
     return (
       <ConfirmBattle
       isLoading={this.state.isLoading}
       playersInfo={this.state.playerInfo}
+      onInitiateBattle={this.state.handleInitiateBattle}
       />
     );
   }
