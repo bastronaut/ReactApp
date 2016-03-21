@@ -37,9 +37,12 @@ var ConfirmBattleContainer = React.createClass({
   },
   handleInitiateBattle: function () {
     console.log('initiating battle');
+    this.context.router.push({
+      pathname: '/results',
+      playersInfo: playersInfo
+    })
   },
   render: function() {
-    console.log('this state is right now:', this.state)
     return (
       <ConfirmBattle
       isLoading={this.state.isLoading}

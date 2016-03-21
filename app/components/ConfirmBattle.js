@@ -10,9 +10,6 @@ function puke(object) {
   return <pre>{JSON.stringify(object, null, ' ')}</pre>
 }
 
-function initiateBattle () {
-
-}
 
 function ConfirmBattle (props) {
   return props.isLoading === true
@@ -33,7 +30,7 @@ function ConfirmBattle (props) {
 
       <div className="col-sm-8 col-sm-offset-2">
         <div className="col-sm-6">
-          <button className="btn btn-lg btn-success" onclick={props.onInitiateBattle}>Initiate battle</button>
+          <button className="btn btn-lg btn-success" onClick={props.onInitiateBattle}>Initiate battle</button>
         </div>
 
         <div className="col-sm-6">
