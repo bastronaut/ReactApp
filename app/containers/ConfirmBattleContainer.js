@@ -10,7 +10,7 @@ var ConfirmBattleContainer = React.createClass({
     console.log('getInitialState');
     return {
       isLoading: true,
-      playerInfo: []
+      playersInfo: []
     }
   },
   componentWillMount :function() {
@@ -19,7 +19,6 @@ var ConfirmBattleContainer = React.createClass({
   componentDidMount: function() {
     console.log('componentDidMount');
      var query = this.props.location.query;
-     console.log('QUERY', query);
      // Fetch info from GH and update state
      githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
       .then(function (players) {
@@ -37,14 +36,15 @@ var ConfirmBattleContainer = React.createClass({
     console.log('componentWillUnmount');
   },
   handleInitiateBattle: function () {
-    console.log('initiating battle')
+    console.log('initiating battle');
   },
   render: function() {
+    console.log('this state is right now:', this.state)
     return (
       <ConfirmBattle
       isLoading={this.state.isLoading}
       playersInfo={this.state.playersInfo}
-      onInitiateBattle={this.state.handleInitiateBattle}
+      onInitiateBattle={this.handleInitiateBattle}
       />
     );
   }
