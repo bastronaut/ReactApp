@@ -14,7 +14,7 @@ var ResultsContainer = React.createClass({
   },
   render: function() {
     return (
-      <Results playersInfo={playersInfo} />
+      <Results playersInfo={this.props.playersInfo} />
     );
   }
 });
