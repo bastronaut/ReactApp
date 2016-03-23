@@ -1,0 +1,4 @@
+module.exports = {
+  STUFF_CREATE: 'STUFF_CREATE',
+  STUFF_DELETE: 'STUFF_DELETE'
+};

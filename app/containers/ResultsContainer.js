@@ -19,4 +19,8 @@ var ResultsContainer = React.createClass({
   }
 });
 
+ResultsContainer.PropTypes = {
+
+};
+
 module.exports = ResultsContainer;
